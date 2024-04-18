@@ -1,5 +1,5 @@
 import sqlite3
-from flask import Flask, request, g, jsonify
+from flask import Flask, request, g, jsonify,render_template,redirect, url_for
 
 
 DATABASE = 'pessoa.db'
@@ -35,28 +35,26 @@ def init_db():
 
 
 #   ROTA PARA CADASTRAR UMA NOVA PESSOA NA TABELA
-@app.route("/pessoas", methods=["POST"])
+@app.route("/pessoas", methods=["GET","POST"])
 def cadastrarPessoas():
-    try:
-        data = request.get_json()
-        cursor = get_db().cursor()
-        sqlInsertPessoas = "INSERT INTO pessoa (nome, cpf) VALUES (?, ?);"
-        if "nome" not in data :
-            return {"message": "nome é obrigatório."}, 400
-        if "cpf" not in data :
-            return {"message": "cpf é obrigatório."}, 400
-        cursor.execute(sqlInsertPessoas, (data["nome"], data["cpf"]))
-        
-        get_db().commit()
-
-        return {
-            "id": cursor.lastrowid,
-            "nome": data["nome"],
-            "cpf": data["cpf"]    
-            }
-    except Exception as ex:
-        return {"message": "erro interno do servidor."}, 500
-    
+    if request.method == "POST":
+        try:
+            data = request.get_json()
+            cursor = get_db().cursor()
+            sqlInsertPessoas = "INSERT INTO pessoa (nome, cpf) VALUES (?, ?);"
+            if "nome" not in data :
+                return {"message": "nome é obrigatório."}, 400
+            if "cpf" not in data :
+                return {"message": "cpf é obrigatório."}, 400
+            cursor.execute(sqlInsertPessoas, (data["nome"], data["cpf"]))
+            get_db().commit()
+            pessoas = []
+            pessoa = {"id": cursor.lastrowid,"nome": data["nome"],"cpf": data["cpf"]}
+            pessoas.append(pessoa)
+            return redirect(url_for('listarPessoas'))
+        except Exception as ex:
+            return {"message": "erro interno do servidor."}, 500
+    return render_template('cadastrar.html')
 
 #   ROTA PARA LISTAR TODAD AS PESSOAS DA TABELA
 @app.route("/", methods=["GET"])
@@ -73,8 +71,8 @@ def listarPessoas():
                 "cpf": row[2]
             }
             pessoas.append(pessoa)
-
-        return jsonify(pessoas)
+            # pessoasCadastradas = jsonify(pessoas)
+        return render_template('index.html', pessoas=pessoas)
     except Exception as ex:
         return {"message": "erro interno do servidor."}, 500
     
@@ -102,8 +100,9 @@ def listarPessoasId(id):
 
 #   ROTA PARA EDITAR UMA PESSOAS DA TABELA, SELECIONANDO PELO ID
 #   METODO PUT, TODAS AS INFORMAÇÕES DA TABELA
-@app.route("/pessoas/<int:id>", methods=["PUT"])
+@app.route("/editar/<int:id>", methods=["GET","POST","PUT"])
 def editarPessoas(id):
+   if request.method == "POST":
     try:
         sqlSelectEditarPessoas = "SELECT * FROM pessoa WHERE id = ?;"
         row = get_db().cursor().execute(sqlSelectEditarPessoas, (id,)).fetchone()
@@ -124,17 +123,26 @@ def editarPessoas(id):
             (data["nome"], data["cpf"], id)
         )
         get_db().commit()
-
+        
+        pessoas = []
         pessoa = {
             "id": id,
             "nome": data["nome"],
             "cpf": data["cpf"]
         }
-
-        return pessoa
+        pessoas.append(pessoa)
+        return redirect(url_for('index')) 
     except Exception as ex:
-        return {"message": "erro interno do servidor."}, 500
-
+      return {"message": "erro interno do servidor."}, 500
+    
+    pessoas = []
+    pessoa = {
+      "id": id,
+      "nome": data["nome"],
+      "cpf": data["cpf"]
+    }
+   pessoas.append(pessoa)
+   return render_template('editar.html', pessoa = pessoa) 
 
 @app.route("/pessoas/<int:id>", methods=["DELETE"])
 def deletarPessoas(id):
@@ -149,7 +157,7 @@ def deletarPessoas(id):
         get_db().cursor().execute(sqlDeletePessoas, (id,))
         get_db().commit()
 
-        return "", 204
+        "", 204
     except Exception as ex:
         return {"message": "erro interno do servidor."}, 500
 

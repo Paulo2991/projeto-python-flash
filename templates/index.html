@@ -1,33 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Pessoas</title>
-    <link rel="stylesheet"  href="{{ url_for('static', filename='css/style.css') }}">
-</head>
-<body>
-    <h1>Cadastro de Pessoas</h1>
-
-    <!-- Formulário para cadastrar uma nova pessoa -->
-    <h2>Cadastrar Nova Pessoa</h2>
-    <form action="/cadastrar" method="post">
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" required>
-        <label for="cpf">CPF:</label>
-        <input type="text" id="cpf" name="cpf" required>
-        <button type="submit">Cadastrar</button>
-    </form>
-
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Listagem De Pessoas</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body>
     <!-- Lista de pessoas cadastradas -->
-    <h2>Pessoas Cadastradas</h2>
-    <ul>
-        {% for pessoa in pessoas %}
-            <li>Nome: {{ pessoa.nome }}, CPF: {{ pessoa.cpf }}
-                [<a href="/editar/{{ pessoa.cpf }}">Editar</a>]
-                [<a href="/excluir/{{ pessoa.cpf }}">Excluir</a>]
-            </li>
-        {% endfor %}
-    </ul>
-</body>
+    <header>
+      <section>
+        
+      </section>
+    </header>
+    <div class="lista">
+      <h2 class="titulo2">Pessoas cadastros</h2>
+      <button class="fundo-botao-atualizar" type="submit">
+        <img
+          clas="btn-atualizar"
+          src="images/atualizar.png"
+          alt="icone de atualização"
+        />
+      </button>
+      <a href="{{ url_for('cadastrarPessoas') }}">Cadastrar Nova Pessoa</a>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>CPF</th>
+            <th>Editar</th>
+            <th>Excluir</th>
+          </tr>
+        </thead>
+        <tbody id="pessoas-cadastrads">
+          <tr>
+            {% for pessoa in pessoas %}
+            <td>{{ pessoa.id }}</td>
+            <td>{{ pessoa.nome }}</td>
+            <td>{{ pessoa.cpf }}</td>
+            <td><a href="/editar/{{ pessoa.id }}">Editar</a></td>
+            <td><a href="/pessoas/{{ pessoa.id }}">Excluir</a></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </body>
 </html>

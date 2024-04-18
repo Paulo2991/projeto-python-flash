@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,13 +7,26 @@
     <title>Editar Pessoa</title>
 </head>
 <body>
-    <h1>Editar Pessoa</h1>
-    <form action="" method="post">
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" value="{{ pessoa.nome }}" required>
-        <label for="cpf">CPF:</label>
-        <input type="text" id="cpf" name="cpf" value="{{ pessoa.cpf }}" required>
-        <button type="submit">Salvar</button>
-    </form>
+   <div id="form">
+        <div>
+            <form action="" method="post">
+            <h2 class="titulo">Editar Pessoa</h2>
+        </div>
+        <div class="input">
+            <label for="Nome">Nome:</label>
+            <input class="input_nome" id="nome" name="nome"  value="{{ pessoa.nome }}"  placeholder="digite seu nome" type="text">
+        </div>
+        <div class="input">
+            <label for="cpf">cpf:</label>
+            <input class="input_cpf" id="cpf" name="cpf" value="{{ pessoa.cpf }}" placeholder="digite seu cpf" type="text">
+        </div>
+        <div id="botoes">
+            <div>
+                <button id="cadastrar" type="submit">Cadastrar</button>
+                <button id="atualizar" type="button">Atualizar</button>
+                <a class="excluir" href="{{ url_for('listarPessoas') }}" type="button">Voltar</a>
+            </div>
+        </div>
+    </div>       
 </body>
 </html>
