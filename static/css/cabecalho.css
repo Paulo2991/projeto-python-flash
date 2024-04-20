@@ -1,0 +1,40 @@
+*{
+   margin:0;
+   padding:0;
+   box-sizing: border-box;
+   border:0;
+   list-style: none;
+   text-decoration: none;
+}
+
+html{
+   font-size: 42.6%;
+}
+
+.cabecalho{
+  background-color: #deebe967;
+  height: 20vh;
+  margin:0 auto;
+  padding: 3% 2% 0 2%;
+  display: flex;
+  flex-direction: row;
+  aling-items: center;
+  justify-content: flex-end;
+}
+
+.items{
+  display: flex;
+  gap: 2rem;
+}
+
+.items a{
+   color: white;
+   font-size: 15px
+}
+
+@media (max-width: 330px){
+  .cabecalho{
+    top: 55%;
+    width: 390px;
+  }  
+}

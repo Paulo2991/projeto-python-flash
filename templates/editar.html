@@ -14,17 +14,17 @@
         </div>
         <div class="input">
             <label for="Nome">Nome:</label>
-            <input class="input_nome" id="nome" name="nome"  value="{{ pessoa.nome }}"  placeholder="digite seu nome" type="text">
+            <input class="input_nome" id="nome" name="nome"  value="{{ pessoa[1] }}"  placeholder="digite seu nome" type="text">
         </div>
         <div class="input">
             <label for="cpf">cpf:</label>
-            <input class="input_cpf" id="cpf" name="cpf" value="{{ pessoa.cpf }}" placeholder="digite seu cpf" type="text">
+            <input class="input_cpf" id="cpf" name="cpf" value="{{ pessoa[2] }}" placeholder="digite seu cpf" type="text">
         </div>
         <div id="botoes">
             <div>
                 <button id="cadastrar" type="submit">Cadastrar</button>
                 <button id="atualizar" type="button">Atualizar</button>
-                <a class="excluir" href="{{ url_for('listarPessoas') }}" type="button">Voltar</a>
+                <a class="excluir" href="{{ url_for('index') }}" type="button">Voltar</a>
             </div>
         </div>
     </div>       
