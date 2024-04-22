@@ -65,7 +65,8 @@ body {
 }
 
 #cadastrar,
-#atualizar {
+#atualizar,
+#excluir {
     font-family: "Poppins", sans-serif;
     font-weight: 600;
     font-style: normal;
@@ -88,22 +89,6 @@ body {
     font-size: 14px;
 }
 
-.excluir{
-    font-family: "Poppins", sans-serif;
-    font-weight: 600;
-    font-style: normal;
-    font-size: 14px;
-    width: 50px;
-    height: 36px;
-    text-decoration: none;
-    text-align: center;
-    background: #e5e5e6;
-    border-radius: 15px;
-    border: 2px #3e517e solid;
-    cursor: pointer;
-    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.3);
-}
-
 
 #atualizar {
     margin: 0 5% 0 5%;
@@ -123,4 +108,41 @@ body {
     }
 } 
 
+@media (max-width: 800px){
+.input_id,
+.input_nome,
+.input_cpf {
+    width: 300px;
+    border-radius: 10px;
+    padding: 2px;
+ }
+}
 
+@media (max-width: 500px){
+.input_id,
+.input_nome,
+.input_cpf {
+    width: 200px;
+ }
+
+ #cadastrar,
+ #atualizar {
+    width: 100%;
+    height: 36px;
+    margin:0 10px;
+}
+}
+
+@media (max-width: 400px){
+.input_id,
+.input_nome,
+.input_cpf {
+    width: 150px;
+ }
+
+ #cadastrar,
+ #atualizar {
+    width: 100%;
+    height: 36px;
+}
+}

@@ -4,7 +4,7 @@ from flask import Flask, request,render_template,redirect, url_for
 app = Flask(__name__)
 dbName = 'cadastro.db'
 
-def create_table():
+def criarTabela():
     conn = sqlite3.connect(dbName)
     c = conn.cursor()
     c.execute('''CREATE TABLE IF NOT EXISTS pessoa (
@@ -70,5 +70,5 @@ def deletarPessoas(id):
     return redirect(url_for('index'))
 
 if __name__ == "__main__":
-    create_table()
+    criarTabela()
     app.run(host="0.0.0.0", port=5000, debug=True, use_reloader=True)

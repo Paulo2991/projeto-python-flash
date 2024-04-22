@@ -75,9 +75,8 @@ table tr:nth-child(even) {
     background: #ffffff;
 }
 
-#btn-atualizar {
+.btn-atualizar {
     display: inline-block;
-
 }
 
 img {
