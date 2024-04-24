@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Cadastrar Pessoas</title>
+</head>
+
+<body>
+    <!-- Formulário para cadastrar uma nova pessoa -->
+    <div id="form">
+        <div>
+            <form action="/cadastrar" method="POST">
+                <h2 class="titulo">Cadastrar pessoas</h2>
+        </div>
+        <div class="input">
+            <label for="nome">Nome:</label>
+            <input class="input_nome" id="nome" name="nome" placeholder="digite seu nome" type="text">
+        </div>
+        <div class="input">
+            <label for="cpf">cpf:</label>
+            <input class="input_cpf" id="cpf" name="cpf" placeholder="digite seu cpf" type="text">
+        </div>
+        <div id="botoes">
+            <div>
+                <button id="cadastrar" type="submit">Cadastrar</button>
+                <button id="voltar" type="button"><a href="{{ url_for('index') }}" type="button">Voltar</a></button>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
