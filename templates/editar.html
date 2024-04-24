@@ -14,19 +14,24 @@
         </div>
         <div class="input">
             <label for="Nome">Nome:</label>
-            <input class="input_nome" id="nome" name="nome"  value="{{ pessoa[1] }}"  placeholder="digite seu nome" type="text">
+            <input class="input_nome" id="nome" name="nome" onchange="validate()"  value="{{ pessoa[1] }}" required  placeholder="digite seu nome" type="text">
+             <span class="erro" id="erroNome"></span>
         </div>
         <div class="input">
             <label for="cpf">cpf:</label>
-            <input class="input_cpf" id="cpf" name="cpf" value="{{ pessoa[2] }}" placeholder="digite seu cpf" type="text">
+            <input class="input_cpf" id="cpf" name="cpf" onchange="validate()" value="{{ pessoa[2] }}" required placeholder="digite seu cpf" type="text">
+            <span class="erro" id="erroCpf"></span>
         </div>
         <div id="botoes">
             <div>
-                <button id="cadastrar" type="submit">Cadastrar</button>
+                <button id="cadastrar" type="submit">Editar</button>
                 <button id="atualizar" type="button">Atualizar</button>
                 <a class="excluir" href="{{ url_for('index') }}" type="button">Voltar</a>
             </div>
         </div>
-    </div>       
+    </div>      
+     <script src="{{ url_for('static', filename='js/formulario.js') }}"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+     <script src="{{ url_for('static', filename='js/camposeditar.js') }}"></script> 
 </body>
 </html>
