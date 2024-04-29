@@ -89,6 +89,81 @@ img {
     padding-left: 2px;
 }
 
+.sucesso{
+  text-align:center;
+  color: green;
+  font-size: 20px;
+}
+
+.modal{
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modalContent{
+  background-color: #fefefe;
+	margin: 15% auto;
+	padding: 20px 0 60px;
+	border: 1px solid #888;
+	width: 80%;
+	max-width: 500px;
+	border-radius: 5px;
+}
+
+.modalContent p{
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.botao{
+  display: flex;
+  margin-top: 30px;
+	flex-wrap: wrap;
+}
+
+.excluir{
+  background-color: white;
+	color: black;
+	text-align: center;
+	border: 1px solid #302d2d;
+	border-radius: 8px;
+	padding: 12px 20px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+	font-family: "Space Grotesk", sans-serif;
+	font-size: 16px;
+	letter-spacing: 1px;
+	font-weight: 700;
+	text-transform: uppercase;
+	width: 44%;
+	margin: 0 2%;
+}
+
+.cancelar{
+  background-color: gray;
+	color: #fff;
+	border: 1px solid #000000;
+	border-radius: 8px;
+	padding: 12px 20px;
+	text-align: center;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+	font-family: "Space Grotesk", sans-serif;
+	font-size: 16px;
+	letter-spacing: 1px;
+	font-weight: 700;
+	text-transform: uppercase;
+	width: 44%;
+	margin: 0 2%;
+}
+
 .fundo-botao-atualizar:hover {
     background-color: #ffffff;
 }

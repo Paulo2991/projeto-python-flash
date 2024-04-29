@@ -1,7 +1,8 @@
 import sqlite3
-from flask import Flask, request,render_template,redirect, url_for
+from flask import Flask, request,render_template,redirect, url_for,flash
 
 app = Flask(__name__)
+app.secret_key = 'sua_chave_secreta_aqui'
 dbName = 'cadastro.db'
 
 def criarTabela():
@@ -26,6 +27,7 @@ def cadastrarPessoas():
      c.execute("INSERT INTO pessoa (nome, cpf) VALUES (?, ?)", (request.form['nome'], request.form['cpf']))
      conn.commit()
      conn.close()
+     flash('Cadastro realizado com sucesso!', 'success')
      return redirect(url_for('index'))
     return render_template('cadastrar.html')
 
@@ -58,6 +60,7 @@ def editarPessoas(id):
         c.execute("SELECT * FROM pessoa WHERE id=?", (id,))
         pessoa = c.fetchone()
         conn.close()
+        flash('Editado realizado com sucesso!', 'success')
         return render_template('editar.html', pessoa=pessoa)
 
 @app.route("/pessoas/<int:id>")
@@ -67,6 +70,7 @@ def deletarPessoas(id):
     c.execute("DELETE FROM pessoa WHERE id=?", (id,))
     conn.commit()
     conn.close()
+    flash('Registro excluido com sucesso!', 'success')
     return redirect(url_for('index'))
 
 if __name__ == "__main__":

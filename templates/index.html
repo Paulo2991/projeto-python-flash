@@ -57,18 +57,32 @@
             <th>Excluir</th>
           </tr>
         </thead>
+        <p class="sucesso">{{ get_flashed_messages() }}</p>
         <tbody id="pessoas-cadastrads">
           <tr>
             {% for pessoa in pessoas %}
             <td>{{ pessoa[0] }}</td>
             <td>{{ pessoa[1] }}</td>
             <td>{{ pessoa[2] }}</td>
-            <td><a href="/editar/{{ pessoa[0] }}">Editar</a></td>
-            <td><a href="/pessoas/{{ pessoa[0] }}">Excluir</a></td>
+            <td>
+              <a href="/editar/{{ pessoa[0] }}">Editar</a>
+            </td>
+            <td>
+              <button class="excluir-btn" data-item-id="{{ pessoa[0] }}">Excluir</button>
+            </td>
           </tr>
           {% endfor %}
         </tbody>
       </table>
+      <div id="modal-confirmacao" class="modal">
+        <div class="modalContent">
+            <p>Você tem certeza que deseja excluir este item?</p>
+            <div class="botao">
+              <button id="confirmar-exclusao" class="excluir">Sim</button>
+              <button id="cancelar-exclusao" class="cancelar">Cancelar</button>
+            </div>
+        </div>
+    </div>
     </div>
     <footer class="footer">
       <p>Cadastro De Pessoas Físicas</p>
@@ -78,5 +92,6 @@
            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIAdmfIC6lwdBVifMfxdLrGfL6Pb-hWO7APhIx4UawCw&s" alt="Facebook"/>
        </section>
     </footer>
+    <script src="{{ url_for('static', filename='js/modalexcluir.js') }}"></script>
   </body>
 </html>
