@@ -23,11 +23,8 @@
             <span class="erro" id="erroCpf"></span>
         </div>
         <div id="botoes">
-            <div>
-                <button id="cadastrar" type="submit">Editar</button>
-                <button id="atualizar" type="button">Atualizar</button>
-                <a class="excluir" href="{{ url_for('index') }}" type="button">Voltar</a>
-            </div>
+            <button id="cadastrar" type="submit">Editar</button>
+            <button id="voltar" type="button"><a href="{{ url_for('index') }}" type="button">Voltar</a></button>
         </div>
     </div>      
      <script src="{{ url_for('static', filename='js/formulario.js') }}"></script>

@@ -55,12 +55,12 @@ def editarPessoas(id):
         c.execute("UPDATE pessoa SET nome=?, cpf=? WHERE id=?", (request.form['nome'], request.form['cpf'], id))
         conn.commit()
         conn.close()
+        flash('Editado realizado com sucesso!', 'success')
         return redirect(url_for('index'))
     else:
         c.execute("SELECT * FROM pessoa WHERE id=?", (id,))
         pessoa = c.fetchone()
         conn.close()
-        flash('Editado realizado com sucesso!', 'success')
         return render_template('editar.html', pessoa=pessoa)
 
 @app.route("/pessoas/<int:id>")
