@@ -21,20 +21,21 @@ label {
 .input_id,
 .input_nome,
 .input_cpf {
-    width: 400px;
+    width: 96%;
     border-radius: 10px;
     border: 2px #3e517e solid;
-    margin: 10px 0 0 20rem;
-    padding: 5px;
+    margin: 10px 0px 0px 5rem;
+    padding: 8px;
     font-family: "Poppins", sans-serif;
     font-size: 16px;
-    background-color: #e5e5e6;
+    background: #e5e5e6;
 }
 
 #botoes {
     margin-top: 2%;
     text-align: center;
     width: 100%;
+    display: block;
 }
 
 #cadastrar,
@@ -60,8 +61,18 @@ label {
     font-size: 14px;
 }
 
+#cadastrar {
+    margin-left: -2%;
+    margin-right: 4.9%;
+}
+
+#voltar a {
+    color: #0c0d2e;
+}
+
 #voltar {
-    margin: 0 5% 0 5%;
+    margin-left: 4.9%;
+    margin-right: 0;
 }
 
 @keyframes iniciar {
@@ -85,16 +96,15 @@ label {
 
 .card{
     width: 70vw;
-    height: 75vh;
-
+    top: 50%;
+    height: 60vh;
 }
 
 .input_id,
 .input_nome,
 .input_cpf {
-    width: 48vw;
+    width: 55vw;
     border-radius: 10px;
-    margin: 0 0 0 14rem;
     padding: 2px;
  }
 
@@ -105,13 +115,14 @@ label {
 
 @media (max-width: 800px){
 .card{
+    top: 50%;
     width: 70vw;
+    height: 60vh;
 }
 .input_id,
 .input_nome,
 .input_cpf {
-    width: 45vw;
-    margin: 0 0 0 10rem;
+    width: 55vw;
     border-radius: 10px;
     padding: 2px;
  }
@@ -123,21 +134,19 @@ label {
 
 @media (max-width: 500px){
 .card{
-    width: 80vw;
+    width: 150vw;
+    top: 80%;
+    margin-left: 30%;
 }
 
 .input_id,
 .input_nome,
 .input_cpf {
-    width: 280px;
+    width: 95%;
+    padding: 5px;
     margin: 0 0 0 3rem;
  }
 
- #cadastrar,
- #voltar {
-    width: 90%;
-    height: 36px;
-}
 .titulo,label{
     text-align: center;
  }
@@ -146,7 +155,8 @@ label {
 
 @media (max-width: 375px){
 .card{
-    width: 380px;
+     width: 150vw;
+     top: 80%;
 }
 
  .titulo,label{
@@ -156,20 +166,16 @@ label {
 .input_id,
 .input_nome,
 .input_cpf {
-    width: 335px;   
+    width: 500px;   
  }
 
- #cadastrar,
- #voltar {
-    width: 90%;
-    height: 35px;
-}
 }
 
 @media (max-width: 320px){
 .card{
-    width: 160%;
+    width: 130%;
     height: 80%;
+    top:80%;
     margin-left: 30%;
     padding: 0 2% 0 2%;
 }
@@ -182,20 +188,13 @@ label {
 .input_nome,
 .input_cpf
 {
-    width: 80%;
-    margin-left: 15%;
+    width: 90%;
  }
-
- #cadastrar,
- #voltar {
-    width: 80%;
-    height: 35px;
-    margin-left: 10%;
-}
 }
 
 .erro{
    color: red;
    position: fixed;
    text-align: center;
+   margin: 0 80px;
 }

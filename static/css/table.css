@@ -138,7 +138,8 @@ img {
     width: 50%;
     height: 36px;
     text-align: center;
-    background-color: #e5e5e6;
+    color: white;
+    background-color: red;
     border-radius: 10px;
     cursor: pointer;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.3);
@@ -208,15 +209,23 @@ img {
 
 @media screen and (max-width: 1024px){
   .card{
-    top: 69%;
+    top: 60%;
+    width: 10vw;
+    height: 2vh;
   }
  
 }
 
 @media screen and (max-width: 800px){
   .card{
-    top: 69%;
+    top: 60%;
+    width: 10vw;
+    height: 2vh;  
   }
+
+ .editar-btn, .excluir-btn{
+  width: 100%;
+ } 
 }
 
 
@@ -238,12 +247,10 @@ img {
 
    table,th,td{
      text-align: center;
-     width: 100px;
+     width: 620px;
      padding:0 5px 0 6px;
      height: 25%;
   }
-
- 
 }
 
 @media screen and (max-width: 375px){
@@ -260,12 +267,10 @@ img {
 
    table,th,td{
      text-align: center;
-     width: 100px;
+     width: 550px;
      padding:0 10px 0 10px;
      height: 25%;
-  }
-
- 
+  } 
 }
 
 @media screen and (max-width: 320px){
@@ -278,13 +283,11 @@ img {
 
   .titulo{
     text-align: center;
-    margin-left: 15%;
   } 
 
    table,th,td{
      text-align: center;
-     width: 180px;
-     margin-left: 15%;
+     width: 400px;
      height: 25%;
   }
 }

@@ -4,12 +4,12 @@
             <h1 class="titulo">Cadastrar pessoas</h1>
         </div>
         <div class="input">
-            <label for="nome">Nome:</label>
+            <label for="nome">Nome</label>
             <input class="input_nome" id="nome" name="nome" placeholder="digite seu nome" type="text" required>
             <span class="erro" id="erroNome"></span>
         </div>
         <div class="input">
-            <label for="cpf">cpf:</label>
+            <label for="cpf">CPF</label>
             <input class="input_cpf" id="cpf" name="cpf" placeholder="digite seu cpf" type="text" required>
             <span class="erro" id="erroCpf"></span>
         </div>
@@ -19,7 +19,6 @@
                 <button id="voltar" type="button"><a href="{{ url_for('index') }}" type="button">Voltar</a></button>
             </div>
         </div>
-   <script src="{{ url_for('static', filename='js/formulario.js') }}"></script>  
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
    <script src="{{ url_for('static', filename='js/validacaocampos.js') }}"></script>     
                 

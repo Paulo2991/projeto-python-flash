@@ -5,12 +5,12 @@
             <h2 class="titulo">Editar Pessoa</h2>
         </div>
         <div class="input">
-            <label for="Nome">Nome:</label>
+            <label for="Nome">Nome</label>
             <input class="input_nome" id="nome" name="nome" onchange="validate()"  value="{{ pessoa[1] }}" required  placeholder="digite seu nome" type="text">
              <span class="erro" id="erroNome"></span>
         </div>
         <div class="input">
-            <label for="cpf">cpf:</label>
+            <label for="cpf">CPF</label>
             <input class="input_cpf" id="cpf" name="cpf" onchange="validate()" value="{{ pessoa[2] }}" required placeholder="digite seu cpf" type="text">
             <span class="erro" id="erroCpf"></span>
         </div>
@@ -19,7 +19,6 @@
             <button id="voltar" type="button"><a href="{{ url_for('index') }}" type="button">Voltar</a></button>
         </div>
     </div>      
-     <script src="{{ url_for('static', filename='js/formulario.js') }}"></script>
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
      <script src="{{ url_for('static', filename='js/camposeditar.js') }}"></script> 
  {% endblock %}

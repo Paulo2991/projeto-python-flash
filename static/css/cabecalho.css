@@ -1,76 +1,88 @@
 @import "reset.css";
 
-.cabecalho{
-  background-color: #deebe967;
-  height: 20vh;
-  margin:0 auto;
-  padding: 3% 2% 0 2%;
+.cabecalho {
+  background-color: #acacac75;
+  height: 15%;
+  width: 100%;
+  margin: 0 auto;
   display: flex;
   flex-direction: row;
-  aling-items: center;
-  justify-content: flex-end;
 }
 
-.items{
+.items {
   display: flex;
   gap: 2rem;
 }
 
-.items a{
-   color: white;
-   font-size: 15px
+.items a {
+  color: #fff;
+  font-size: 20px;
+  text-decoration: none;
+  display: inline-block;
+  padding: 16px 10px;
+  transition: background-color 0.3s ease;
+  border-radius: 10px;
+  margin-left: 16px;
+  margin-top: 16px;
 }
 
-@media screen and (max-width: 620px){
-
-  .cabecalho{
-    
-  }
-#menu{
-  display: none;
+.items a:hover {
+  background-color: #8b8888ba;
 }
 
-.hamburger{
+ul .items {
+  align-self: flex-end;
+}
+
+.hamburger-menu {
   display: block;
   padding: 20px;
-  font-size: calc(2em + 2vw);
+  font-size: 6em;
   background-color: transparent;
   color: #fff;
   cursor: pointer;
   border: none;
+  margin-left: 50px;
+  border-radius: 10px;
+  transition: background-color 0.5s ease;
 }
 
-.logo{
-  position: absolute;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
+.hamburger-menu:hover {
+  background-color: #8b8888ba;
 }
 
-nav.showNav{
+section nav ul li ul li a {
+
+  border-radius: 15px;
   display: block;
-}
-
-nav ul{
-  padding: 16px 0;
   text-align: center;
+
 }
 
-nav ul li a{
+
+ul li ul.dropdown li {
   display: block;
-  padding: 16px 0;
-  color: #fff;
-  text-decoration: none;
-  border-bottom: 1px solid #545454;
 }
 
-nav ul li:last-child a{
-   border-bottom: none;
-  }
+ul li ul.dropdown {
+  background-color: #acacac75;
+  position: absolute;
+  z-index: 999;
+  display: none;
+  border-radius: 10px;
+
+
 }
 
-@media (max-width: 330px){
+header section nav ul li:hover ul.dropdown {
+  display: block;
+  margin: 0;
+}
+
+@media (max-width: 500px){
   .cabecalho{
+    display: flex;
+    flex-direction: column;
     top: 55%;
     width: 160%;
   }  
