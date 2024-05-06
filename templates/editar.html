@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <title>Editar Pessoa</title>
-</head>
-<body>
+{% extends 'base.html' %} {% block content %}
    <div id="form">
-        <div>
+        <div class="formulario">
             <form action="" method="post">
             <h2 class="titulo">Editar Pessoa</h2>
         </div>
@@ -30,5 +22,4 @@
      <script src="{{ url_for('static', filename='js/formulario.js') }}"></script>
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
      <script src="{{ url_for('static', filename='js/camposeditar.js') }}"></script> 
-</body>
-</html>
+ {% endblock %}

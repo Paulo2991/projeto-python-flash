@@ -1,0 +1,201 @@
+@import "reset.css";
+
+.formulario{
+   display: flex;
+   flex-direction: column;
+   align-items: center;  
+   justify-content: center;
+   flex-wrap: wrap;
+}
+
+.titulo{
+  text-align: center;
+}
+
+label {
+    display: block;
+    margin-bottom: 1%;
+    text-align: center;
+}
+
+.input_id,
+.input_nome,
+.input_cpf {
+    width: 400px;
+    border-radius: 10px;
+    border: 2px #3e517e solid;
+    margin: 10px 0 0 20rem;
+    padding: 5px;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    background-color: #e5e5e6;
+}
+
+#botoes {
+    margin-top: 2%;
+    text-align: center;
+    width: 100%;
+}
+
+#cadastrar,
+#voltar {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 14px;
+    width: 29%;
+    height: 36px;
+    text-align: center;
+    background-color: #e5e5e6;
+    border-radius: 10px;
+    border: 2px #3e517e solid;
+    cursor: pointer;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.3);
+}
+
+#cadastrar:hover,
+#voltar:hover {
+    background: #ffffff;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+#voltar {
+    margin: 0 5% 0 5%;
+}
+
+@keyframes iniciar {
+    0% {
+        top: -20%;
+        opacity: 1%;
+        pointer-events: none;
+    }
+
+    100% {
+        top: 50%;
+        opacity: 100%;
+        pointer-events: all;
+    }
+} 
+
+@media (max-width: 1024px){
+.titulo{
+    text-align: center;
+}
+
+.card{
+    width: 70vw;
+    height: 75vh;
+
+}
+
+.input_id,
+.input_nome,
+.input_cpf {
+    width: 48vw;
+    border-radius: 10px;
+    margin: 0 0 0 14rem;
+    padding: 2px;
+ }
+
+.titulo,label{
+    text-align: center;
+ }
+}
+
+@media (max-width: 800px){
+.card{
+    width: 70vw;
+}
+.input_id,
+.input_nome,
+.input_cpf {
+    width: 45vw;
+    margin: 0 0 0 10rem;
+    border-radius: 10px;
+    padding: 2px;
+ }
+
+ .titulo,label{
+    text-align: center;
+ }
+}
+
+@media (max-width: 500px){
+.card{
+    width: 80vw;
+}
+
+.input_id,
+.input_nome,
+.input_cpf {
+    width: 280px;
+    margin: 0 0 0 3rem;
+ }
+
+ #cadastrar,
+ #voltar {
+    width: 90%;
+    height: 36px;
+}
+.titulo,label{
+    text-align: center;
+ }
+
+}
+
+@media (max-width: 375px){
+.card{
+    width: 380px;
+}
+
+ .titulo,label{
+    text-align: center;
+ }
+
+.input_id,
+.input_nome,
+.input_cpf {
+    width: 335px;   
+ }
+
+ #cadastrar,
+ #voltar {
+    width: 90%;
+    height: 35px;
+}
+}
+
+@media (max-width: 320px){
+.card{
+    width: 160%;
+    height: 80%;
+    margin-left: 30%;
+    padding: 0 2% 0 2%;
+}
+
+.titulo,label{
+    text-align: center;
+}
+
+.input_id,
+.input_nome,
+.input_cpf
+{
+    width: 80%;
+    margin-left: 15%;
+ }
+
+ #cadastrar,
+ #voltar {
+    width: 80%;
+    height: 35px;
+    margin-left: 10%;
+}
+}
+
+.erro{
+   color: red;
+   position: fixed;
+   text-align: center;
+}

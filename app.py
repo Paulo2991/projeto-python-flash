@@ -70,7 +70,6 @@ def deletarPessoas(id):
     c.execute("DELETE FROM pessoa WHERE id=?", (id,))
     conn.commit()
     conn.close()
-    flash('Registro excluido com sucesso!', 'success')
     return redirect(url_for('index'))
 
 if __name__ == "__main__":

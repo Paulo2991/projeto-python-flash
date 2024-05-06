@@ -41,7 +41,8 @@
 }
 @media (max-width: 330px){
   .footer{
-    width: 122vw;
+    width: 158vw;
+    top: 800px;
   }
 
   .contatos img{

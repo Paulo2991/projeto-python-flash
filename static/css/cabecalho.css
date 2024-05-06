@@ -21,9 +21,57 @@
    font-size: 15px
 }
 
+@media screen and (max-width: 620px){
+
+  .cabecalho{
+    
+  }
+#menu{
+  display: none;
+}
+
+.hamburger{
+  display: block;
+  padding: 20px;
+  font-size: calc(2em + 2vw);
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+}
+
+.logo{
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+nav.showNav{
+  display: block;
+}
+
+nav ul{
+  padding: 16px 0;
+  text-align: center;
+}
+
+nav ul li a{
+  display: block;
+  padding: 16px 0;
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid #545454;
+}
+
+nav ul li:last-child a{
+   border-bottom: none;
+  }
+}
+
 @media (max-width: 330px){
   .cabecalho{
     top: 55%;
-    width: 390px;
+    width: 160%;
   }  
 }
