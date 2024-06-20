@@ -10,6 +10,6 @@ RUN pip install -r requirements.txt
 
 # Copie o código da aplicação
 COPY app.py app.py
-
+ENV FLASK_APP=app.py
 # Defina o comando padrão a ser executado quando o container iniciar
-CMD ["python", "app.py"]
+CMD ["flask", "run"]
